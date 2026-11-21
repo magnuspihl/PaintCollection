@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Warpaints Fanatic — collection</title>
 <style>
-  :root { --bg:#17181a; --card:#212226; --ink:#e9e7e2; --mute:#8d8b86; --line:#34353a; --own:#f2d27a; }
+  :root { --bg:#17181a; --card:#212226; --ink:#e9e7e2; --mute:#8d8b86; --line:#34353a; --own:#f2d27a; --want:#6cb4ff; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif; }
   header { position:sticky; top:0; z-index:5; background:rgba(23,24,26,.94); backdrop-filter:blur(6px);
@@ -53,6 +53,12 @@
   body.mode-missing .sw:not(.own) .rim { background:#ff6b6b; }
   body.mode-missing .sw.own .rim { background:#3a3b40; }
   body.mode-missing .sw.own .tick { display:none; }
+  /* wanted: blue rim + star, beats the spotlight-missing red rim */
+  body .sw.want:not(.own) .rim { background:var(--want); }
+  .sw .star { position:absolute; right:3px; top:9px; width:15px; height:15px; border-radius:50%; background:var(--want); color:#0d2238;
+              font-size:10px; font-weight:800; display:none; align-items:center; justify-content:center; z-index:2; }
+  .sw.want:not(.own) .star { display:flex; }
+  body.click-want .sw { cursor:copy; }
   /* metallic / effect sheen */
   .metal .fill, .gem .fill { background-image:linear-gradient(160deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 35%,rgba(0,0,0,.25) 60%,rgba(255,255,255,.35) 85%,rgba(0,0,0,.2) 100%) !important; background-color:var(--c) !important; }
   .wash .fill { background-image:linear-gradient(180deg,rgba(255,255,255,.18),rgba(0,0,0,.35)) !important; background-color:var(--c) !important; }
@@ -62,14 +68,16 @@
   .cov { position:relative; height:16px; margin-top:6px; width:392px; }
   .cov .cell { position:absolute; top:5px; width:58px; height:6px; border-radius:3px; background:#2e2f34; }
   .cov .cell.on { background:var(--own); }
+  .cov .cell.want { background:var(--want); }
   .cov .span { position:absolute; top:7px; height:2px; background:rgba(242,210,122,.45); }
   .fam-status { font-size:12px; color:var(--mute); margin-top:2px; min-height:16px; }
   .fam-status.ok { color:var(--own); }
+  .fam-status.soon { color:var(--want); }
   .pill { display:inline-block; font-size:10.5px; font-weight:700; color:#222; background:var(--own); border-radius:8px; padding:0 6px; margin-left:6px; vertical-align:1px; }
   .good { color:#8fd18f; } .bad { color:#e59a9a; }
   .legend-note { color:var(--mute); font-size:12px; margin:6px 0 0; }
   .specials { display:flex; flex-wrap:wrap; gap:4px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
-  aside { position:sticky; top:72px; align-self:start; max-height:calc(100vh - 92px); overflow:auto; }
+  aside { position:sticky; top:calc(var(--hh, 56px) + 16px); align-self:start; max-height:calc(100vh - var(--hh, 56px) - 32px); overflow:auto; }
   .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:12px; }
   .panel h3 { margin:0 0 6px; font-size:14px; }
   .panel p { margin:4px 0; color:var(--mute); font-size:12.5px; }
@@ -94,6 +102,19 @@
   .sbtn.done { color:var(--own); border-color:transparent; background:none; }
   .sbtn.done:hover { color:#ff8a8a; }
   .fam-h .famadd { margin-left:8px; font-size:11px; padding:1px 7px; }
+  .seg#click button.on[data-c=want] { background:#1d3a5c; color:#cfe6ff; }
+  .shop-item { display:flex; align-items:center; gap:8px; padding:4px 0; }
+  .shop-item .chip { width:20px; height:23px; }
+  .shop-item .nm { flex:1; font-size:13px; }
+  .shop-item .nm small { display:block; color:var(--mute); font-size:11.5px; }
+  .shop-item .pr { color:var(--mute); font-size:12px; }
+  .x { background:none; border:0; color:var(--mute); cursor:pointer; font-size:15px; padding:0 2px; }
+  .x:hover { color:#ff8a8a; }
+  .shop-actions { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  .shop-total { font-weight:600; margin-top:6px; padding-top:6px; border-top:1px solid var(--line); display:flex; justify-content:space-between; }
+  .sug .acts { margin-left:auto; display:flex; gap:4px; flex:0 0 auto; }
+  .sug { cursor:default; }
+  #wanthead { color:var(--want); }
   .toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:#333; color:#fff; padding:8px 14px; border-radius:6px; opacity:0; transition:opacity .2s; pointer-events:none; }
   .toast.on { opacity:1; }
 </style>
@@ -101,7 +122,11 @@
 <body>
 <header>
   <h1>Warpaints Fanatic</h1>
-  <span class="stat"><b id="cnt">0</b> / <span id="tot"></span> owned · <b id="tcnt">0</b>/27 families with a triad</span>
+  <span class="stat"><b id="cnt">0</b> / <span id="tot"></span> owned · <b id="tcnt">0</b>/27 families with a triad · <b id="wcnt">0</b> wanted</span>
+  <span class="seg" id="click" title="What a click on a paint does">
+    <button data-c="own" class="on">Click marks: Owned</button>
+    <button data-c="want">Wanted ★</button>
+  </span>
   <span class="seg" id="mode">
     <button data-m="owned" class="on" title="Owned paints pop, missing ones fade">Spotlight owned</button>
     <button data-m="missing" title="Missing paints pop, owned ones fade">Spotlight missing</button>
@@ -110,11 +135,11 @@
     <button data-f="all" class="on">All</button>
     <button data-f="own">Owned</button>
     <button data-f="miss">Missing</button>
+    <button data-f="want">Wanted</button>
   </span>
   <input type="search" id="q" placeholder="Search…">
   <span class="spacer"></span>
-  <button class="btn" id="share" title="Copy a link that contains your collection">Share link</button>
-  <button class="btn" id="list" title="Copy shopping list (missing paints) as text">Shopping list</button>
+  <button class="btn" id="share" title="Copy a link that contains your collection and shopping list">Share link</button>
   <button class="btn" id="reset">Clear</button>
 </header>
 
@@ -127,13 +152,17 @@
   </section>
   <aside>
     <div class="panel">
+      <h3 id="wanthead">Shopping list</h3>
+      <div id="shop"></div>
+    </div>
+    <div class="panel">
       <h3>Boxed sets</h3>
       <p>Mark a whole set as owned. For sets you don't own: new paints, triads it would complete, and price compared with buying those new paints singly (€3.69, metallics/washes/effects €3.99). EU webshop prices as of 21 Nov 2026. Hover to see the paints on the chart.</p>
       <div id="sets"></div>
     </div>
     <div class="panel">
       <h3>Suggested next buys</h3>
-      <p>First paints that complete a triad, then ones that bridge a big jump inside a family you already use, then ones that widen a narrow range or start a triad. Click to mark as owned.</p>
+      <p>First paints that complete a triad, then ones that bridge a big jump inside a family you already use, then ones that widen a narrow range or start a triad. Paints already on your shopping list count as owned here.</p>
       <div id="sugs"></div>
     </div>
     <div class="panel">
@@ -152,21 +181,28 @@ const HEX = {};
 DATA.families.forEach(([, ps]) => ps.forEach(([n, h]) => HEX[n] = h));
 DATA.specials.forEach(([, , ps]) => ps.forEach(([n, h]) => HEX[n] = h));
 
-let owned = new Set();
+const KEY_W = 'warpaints-fanatic-wanted-v1';
+let owned = new Set(), wanted = new Set();
+let clickMode = 'own';
 function load() {
-  const m = location.hash.match(/^#o=([A-Za-z0-9_-]+)/);
+  const m = location.hash.match(/^#o=([A-Za-z0-9_-]*)(?:&w=([A-Za-z0-9_-]*))?/);
   if (m) {
-    owned = decode(m[1]);
+    owned = decode(m[1]); wanted = m[2] ? decode(m[2]) : new Set();
     history.replaceState(null, '', location.pathname);
     save(); toast('Collection loaded from link');
     return;
   }
-  try { owned = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch { owned = new Set(); }
+  const read = k => { try { return new Set(JSON.parse(localStorage.getItem(k) || '[]')); } catch { return new Set(); } };
+  owned = read(KEY); wanted = read(KEY_W);
 }
-function save() { localStorage.setItem(KEY, JSON.stringify([...owned])); }
-function encode() {
+function save() {
+  owned.forEach(n => wanted.delete(n));   // bought → off the list
+  localStorage.setItem(KEY, JSON.stringify([...owned]));
+  localStorage.setItem(KEY_W, JSON.stringify([...wanted]));
+}
+function encode(set = owned) {
   const bytes = new Uint8Array(Math.ceil(ORDER.length / 8));
-  ORDER.forEach((n, i) => { if (owned.has(n)) bytes[i >> 3] |= 1 << (i & 7); });
+  ORDER.forEach((n, i) => { if (set.has(n)) bytes[i >> 3] |= 1 << (i & 7); });
   return btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 function decode(s) {
@@ -188,13 +224,16 @@ function swatch(n, h, cls = '') {
   d.style.setProperty('--t', textColor(h));
   d.dataset.n = n;
   d.title = n;
-  d.innerHTML = `<div class="rim"></div><div class="fill"><span>${n}</span></div><div class="tick">✓</div>`;
+  d.innerHTML = `<div class="rim"></div><div class="fill"><span>${n}</span></div><div class="tick">✓</div><div class="star">★</div>`;
   d.onclick = () => toggle(n);
   swEls[n] = d;
   return d;
 }
-function toggle(n) {
-  owned.has(n) ? owned.delete(n) : owned.add(n);
+function toggle(n, mode = clickMode) {
+  if (mode === 'want') {
+    if (owned.has(n)) { toast(`${n} is already owned`); return; }
+    wanted.has(n) ? wanted.delete(n) : wanted.add(n);
+  } else owned.has(n) ? owned.delete(n) : owned.add(n);
   save(); refresh();
 }
 
@@ -246,7 +285,7 @@ function famInfo(names, set = owned) {
 function suggestions() {
   const out = [];
   famBuild.forEach(({ fname, names }) => {
-    const { pos, k, span } = famInfo(names);
+    const { pos, k, span } = famInfo(names, planned());
     const free = names.map((_, i) => i).filter(i => !pos.includes(i));
     const nm = i => names[i];
     if (k === 2) {
@@ -274,6 +313,8 @@ function suggestions() {
   return out.sort((a, b) => a.tier - b.tier || b.sub - a.sub).slice(0, 15);
 }
 
+const planned = () => new Set([...owned, ...wanted]);
+
 function setValue(s) {
   const nw = s.p.filter(n => !owned.has(n));
   const after = new Set([...owned, ...s.p]);
@@ -288,13 +329,15 @@ function refresh() {
   for (const [n, el] of Object.entries(swEls)) {
     const o = owned.has(n);
     el.classList.toggle('own', o);
-    const hide = (filt === 'own' && !o) || (filt === 'miss' && o) || (q && !n.toLowerCase().includes(q));
+    el.classList.toggle('want', wanted.has(n));
+    const hide = (filt === 'own' && !o) || (filt === 'miss' && o) || (filt === 'want' && !wanted.has(n)) || (q && !n.toLowerCase().includes(q));
     el.classList.toggle('hide', hide);
   }
   let full = 0;
   famBuild.forEach(({ names, cells, span, status }) => {
     const { pos, k, span: sp } = famInfo(names);
-    cells.forEach((c, i) => c.classList.toggle('on', pos.includes(i)));
+    cells.forEach((c, i) => { c.classList.toggle('on', pos.includes(i)); c.classList.toggle('want', wanted.has(names[i])); });
+    const kp = famInfo(names, planned()).k;
     span.style.display = k >= 2 ? '' : 'none';
     if (k >= 2) { span.style.left = (pos[0] * 66 + 2) + 'px'; span.style.width = (sp * 66 + 58) + 'px'; }
     let msg = '', ok = false;
@@ -304,12 +347,15 @@ function refresh() {
       msg = k === 6 ? 'Full family: every step for smooth blending'
           : sp >= 4 ? (gap >= 3 ? `Triad, wide range, but a ${gap}-step jump in the middle` : 'Triad, wide range')
           : sp === 2 ? 'Triad, subtle (three neighbours)' : 'Triad, medium contrast';
-    } else if (k === 2) msg = 'One paint short of a triad';
+    } else if (kp >= 3) msg = 'Triad once your wanted paints arrive';
+    else if (k === 2) msg = 'One paint short of a triad';
     else if (k === 1) msg = 'Two paints short of a triad';
-    status.textContent = msg; status.classList.toggle('ok', ok);
+    status.textContent = msg; status.classList.toggle('ok', ok); status.classList.toggle('soon', !ok && kp >= 3);
   });
   document.getElementById('cnt').textContent = owned.size;
   document.getElementById('tcnt').textContent = full;
+  document.getElementById('wcnt').textContent = wanted.size;
+  renderShop();
 
   const fl = document.getElementById('famlist'); fl.innerHTML = '';
   famBuild.forEach(({ fname, names, head, add }) => {
@@ -326,7 +372,7 @@ function refresh() {
     const v = vals[i], miss = v.nw, have = s.p.length - miss;
     const r = document.createElement('div'); r.className = 'setrow';
     const money = miss ? ` · €${s.eur.toFixed(2)}, ${Math.abs(v.diff) < 1 ? `same as ${miss} singles` : v.diff > 0 ? `<span class="good">€${v.diff.toFixed(0)} cheaper</span> than ${miss} singles` : `<span class="bad">€${(-v.diff).toFixed(0)} dearer</span> than ${miss} singles`}` : '';
-    r.innerHTML = `<div class="sname">${s.t}<div class="sdesc">${have}/${s.p.length} owned${miss ? ` · <b style="color:var(--ink)">+${miss} new</b>` : ''}${v.triads ? ` · <b style="color:var(--own)">+${v.triads} triad${v.triads > 1 ? 's' : ''}</b>` : ''}${money}${s.note ? ' · ' + s.note : ''}</div>
+    r.innerHTML = `<div class="sname">${s.t}<div class="sdesc">${have}/${s.p.length} owned${miss ? ` · <b style="color:var(--ink)">+${miss} new</b>` : ''}${v.triads ? ` · <b style="color:var(--own)">+${v.triads} triad${v.triads > 1 ? 's' : ''}</b>` : ''}${money}${(c => c ? ` · <b style="color:var(--want)">${c} on your list</b>` : '')(s.p.filter(n => wanted.has(n)).length)}${s.note ? ' · ' + s.note : ''}</div>
       <div class="mini"><i style="width:${have / s.p.length * 100}%"></i></div></div>
       <button class="sbtn ${miss ? '' : 'done'}" title="${miss ? 'Mark all ' + s.p.length + ' paints as owned' : 'Click to unmark these paints'}">${miss ? 'I own this' : '✓ owned'}</button>`;
     r.querySelector('button').onclick = () => {
@@ -346,13 +392,47 @@ function refresh() {
   s.forEach(x => {
     const d = document.createElement('div'); d.className = 'sug';
     d.innerHTML = `<div class="chip" style="background:${HEX[x.n]}"></div>
-      <div><div class="sname">${x.n}</div><div class="sdesc">${x.fam}: ${x.why}</div></div>
-      <div class="score">${x.tag ? '+1 triad' : ''}</div>`;
-    d.onclick = () => toggle(x.n);
+      <div><div class="sname">${x.n}${x.tag ? ' <span style="color:var(--own);font-weight:700;font-size:11px">+1 triad</span>' : ''}</div><div class="sdesc">${x.fam}: ${x.why}</div></div>
+      <div class="acts"><button class="sbtn" data-a="want" title="Add to shopping list">★ Want</button><button class="sbtn" data-a="own" title="Mark as owned">Own</button></div>`;
+    d.querySelectorAll('button').forEach(b => b.onclick = () => toggle(x.n, b.dataset.a));
     d.onmouseenter = () => { swEls[x.n].classList.add('hl'); };
     d.onmouseleave = () => { swEls[x.n].classList.remove('hl'); };
     sg.appendChild(d);
   });
+}
+
+const SECTION = {};
+DATA.families.forEach(([f, ps]) => ps.forEach(([n]) => SECTION[n] = f));
+DATA.specials.forEach(([f, , ps]) => ps.forEach(([n]) => SECTION[n] = f));
+
+function shopList() { return ORDER.filter(n => wanted.has(n)); }   // stable chart order
+
+function renderShop() {
+  const box = document.getElementById('shop'), items = shopList();
+  const total = items.reduce((a, n) => a + SINGLE(n), 0);
+  document.getElementById('wanthead').textContent = items.length ? `Shopping list (${items.length})` : 'Shopping list';
+  if (!items.length) {
+    box.innerHTML = `<p>Empty. Switch the header toggle to <b>Wanted ★</b> and click paints, or press <b>★ Want</b> on a suggestion. Wanted paints get a blue rim; marking one owned takes it off the list.</p>`;
+    return;
+  }
+  box.innerHTML = items.map(n => `<div class="shop-item" data-n="${n}"><div class="chip" style="background:${HEX[n]}"></div>
+      <div class="nm">${n}<small>${SECTION[n]}</small></div><span class="pr">€${SINGLE(n).toFixed(2)}</span>
+      <button class="x" data-a="bought" title="Bought it: mark as owned">✓</button><button class="x" data-a="rm" title="Remove from list">×</button></div>`).join('')
+    + `<div class="shop-total"><span>${items.length} paint${items.length > 1 ? 's' : ''}, as singles</span><span>€${total.toFixed(2)}</span></div>
+       <div class="shop-actions"><button class="sbtn" id="shopcopy">Copy list</button><button class="sbtn" id="shopbought">Mark all bought</button><button class="sbtn" id="shopclear">Clear list</button></div>`;
+  box.querySelectorAll('.shop-item').forEach(r => {
+    const n = r.dataset.n;
+    r.onmouseenter = () => swEls[n].classList.add('hl');
+    r.onmouseleave = () => swEls[n].classList.remove('hl');
+    r.querySelector('[data-a=bought]').onclick = () => { swEls[n].classList.remove('hl'); owned.add(n); save(); refresh(); };
+    r.querySelector('[data-a=rm]').onclick = () => { swEls[n].classList.remove('hl'); wanted.delete(n); save(); refresh(); };
+  });
+  document.getElementById('shopcopy').onclick = async () => {
+    const txt = 'Warpaints Fanatic shopping list\n' + items.map(n => `- ${n} (${SECTION[n]})`).join('\n') + `\n${items.length} paints, about €${total.toFixed(2)} as singles`;
+    try { await navigator.clipboard.writeText(txt); toast('Shopping list copied'); } catch { prompt('Copy:', txt); }
+  };
+  document.getElementById('shopbought').onclick = () => { if (confirm(`Mark all ${items.length} paints as owned?`)) { items.forEach(n => owned.add(n)); save(); refresh(); } };
+  document.getElementById('shopclear').onclick = () => { if (confirm('Empty the shopping list?')) { wanted.clear(); save(); refresh(); } };
 }
 
 function toast(t) { const e = document.getElementById('toast'); e.textContent = t; e.classList.add('on'); setTimeout(() => e.classList.remove('on'), 1800); }
@@ -362,21 +442,17 @@ function seg(id, cb) {
 }
 seg('mode', b => { document.body.classList.toggle('mode-missing', b.dataset.m === 'missing'); });
 seg('filter', refresh);
+seg('click', b => { clickMode = b.dataset.c; document.body.classList.toggle('click-want', clickMode === 'want'); });
 document.getElementById('q').oninput = refresh;
 document.getElementById('share').onclick = async () => {
-  const url = location.origin + location.pathname + '#o=' + encode();
+  const url = location.origin + location.pathname + '#o=' + encode(owned) + (wanted.size ? '&w=' + encode(wanted) : '');
   try { await navigator.clipboard.writeText(url); toast('Share link copied'); } catch { prompt('Copy this link:', url); }
 };
-document.getElementById('list').onclick = async () => {
-  const lines = [];
-  DATA.families.forEach(([f, ps]) => { const m = ps.map(p => p[0]).filter(n => !owned.has(n)); if (m.length) lines.push(`${f}: ${m.join(', ')}`); });
-  DATA.specials.forEach(([f, , ps]) => { const m = ps.map(p => p[0]).filter(n => !owned.has(n)); if (m.length) lines.push(`${f}: ${m.join(', ')}`); });
-  const txt = lines.join('\n');
-  try { await navigator.clipboard.writeText(txt); toast('Missing-paint list copied'); } catch { prompt('Copy:', txt); }
-};
-document.getElementById('reset').onclick = () => { if (confirm('Clear your whole collection?')) { owned.clear(); save(); refresh(); } };
+document.getElementById('reset').onclick = () => { if (confirm('Clear everything: owned paints and shopping list?')) { owned.clear(); wanted.clear(); save(); refresh(); } };
 
-load(); build(); refresh();
+const syncHeader = () => document.documentElement.style.setProperty('--hh', document.querySelector('header').offsetHeight + 'px');
+window.addEventListener('resize', syncHeader);
+load(); build(); refresh(); syncHeader();
 </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 Track which Army Painter **Warpaints Fanatic** paints you own, see coverage per Flexible Triad family, and get suggestions for what to buy next.
 
 - 216 paints, grouped into the 27 six-step Flexible Triad families (dark → light) plus effects, fluorescents, metallics, gemstones, washes and auxiliaries.
-- Click a paint to mark it owned. Collection is stored in the browser (localStorage); "Share link" encodes it in the URL to move it between devices.
+- Click a paint to mark it owned, or switch the header toggle to **Wanted ★** to build a shopping list instead (sidebar: total, copy, mark bought). Collection is stored in the browser (localStorage); "Share link" encodes owned + wanted in the URL to move it between devices.
 - Boxed sets (Starter, Most Wanted, Mega, Wargamers, Washes, Metallics, Combat Se7ens, …) can be marked owned in one click, and show new paints, triads completed and price vs. singles.
 
 ## Editing
