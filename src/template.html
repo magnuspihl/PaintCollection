@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warpaints Fanatic — collection</title>
+<style>
+  :root { --bg:#17181a; --card:#212226; --ink:#e9e7e2; --mute:#8d8b86; --line:#34353a; --own:#f2d27a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  header { position:sticky; top:0; z-index:5; background:rgba(23,24,26,.94); backdrop-filter:blur(6px);
+           border-bottom:1px solid var(--line); padding:10px 18px; display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; }
+  h1 { font-size:18px; margin:0; letter-spacing:.02em; }
+  h1 small { color:var(--mute); font-weight:400; }
+  .stat { color:var(--mute); }
+  .stat b { color:var(--ink); }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+  .seg button { background:none; border:0; color:var(--mute); padding:5px 10px; cursor:pointer; font:inherit; }
+  .seg button.on { background:#33343a; color:var(--ink); }
+  .btn { background:#2b2c31; border:1px solid var(--line); color:var(--ink); border-radius:6px; padding:5px 10px; cursor:pointer; font:inherit; }
+  .btn:hover { background:#36373d; }
+  input[type=search] { background:#111214; border:1px solid var(--line); color:var(--ink); border-radius:6px; padding:5px 9px; font:inherit; width:160px; }
+  .spacer { flex:1; }
+  main { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:18px; padding:18px; max-width:1500px; margin:0 auto; }
+  @media (max-width:1000px){ main { grid-template-columns:1fr; } aside { order:-1; } }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--mute); margin:22px 0 10px; font-weight:600; }
+  h2:first-child { margin-top:0; }
+  .families { display:grid; grid-template-columns:repeat(auto-fill,minmax(400px,1fr)); gap:12px; }
+  .fam { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px 8px; }
+  .fam-h { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
+  .fam-h b { font-size:13px; }
+  .fam-h span { color:var(--mute); font-size:12px; }
+  .row { display:flex; gap:4px; }
+  .sw { --c:#888; width:62px; height:70px; position:relative; cursor:pointer; flex:0 0 auto; user-select:none; }
+  .sw .rim, .sw .fill { position:absolute; clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+  .sw .rim { inset:0; background:#3a3b40; }
+  .sw .fill { inset:3px; background:var(--c); display:flex; align-items:center; justify-content:center; text-align:center;
+              font-size:9.5px; line-height:1.1; font-weight:600; padding:0 5px; color:var(--t); }
+  .sw.own .rim { background:var(--own); }
+  .sw .fill::before { content:""; position:absolute; inset:0; pointer-events:none; }
+  .sw:not(.own) .fill::before, body.mode-missing .sw.own .fill::before {
+      background:repeating-linear-gradient(135deg, rgba(23,24,26,.55) 0 4px, rgba(23,24,26,.75) 4px 7px); }
+  .sw:not(.own) .fill, body.mode-missing .sw.own .fill { color:#e6e6e6; text-shadow:0 0 3px #000, 0 0 2px #000; }
+  .sw .fill span { position:relative; }
+  .sw:not(.own):hover .fill::before { background:rgba(23,24,26,.35); }
+  .sw .tick { position:absolute; right:3px; top:9px; width:15px; height:15px; border-radius:50%; background:var(--own); color:#222;
+              font-size:11px; font-weight:800; display:none; align-items:center; justify-content:center; z-index:2; }
+  .sw.own .tick { display:flex; }
+  .sw.hl .rim { background:#fff !important; }
+  .sw.hide { display:none; }
+  body.mode-missing .sw:not(.own) .fill::before { background:none; }
+  body.mode-missing .sw:not(.own) .fill { color:var(--t); text-shadow:none; }
+  body.mode-missing .sw:not(.own) .rim { background:#ff6b6b; }
+  body.mode-missing .sw.own .rim { background:#3a3b40; }
+  body.mode-missing .sw.own .tick { display:none; }
+  /* metallic / effect sheen */
+  .metal .fill, .gem .fill { background-image:linear-gradient(160deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 35%,rgba(0,0,0,.25) 60%,rgba(255,255,255,.35) 85%,rgba(0,0,0,.2) 100%) !important; background-color:var(--c) !important; }
+  .wash .fill { background-image:linear-gradient(180deg,rgba(255,255,255,.18),rgba(0,0,0,.35)) !important; background-color:var(--c) !important; }
+  .effect .fill { background-image:radial-gradient(circle at 30% 30%,rgba(0,0,0,.35) 0 3px,transparent 4px),radial-gradient(circle at 70% 65%,rgba(0,0,0,.3) 0 4px,transparent 5px),radial-gradient(circle at 55% 20%,rgba(255,255,255,.25) 0 2px,transparent 3px) !important; background-color:var(--c) !important; }
+  .fluo .fill { box-shadow:inset 0 0 12px rgba(255,255,255,.6); }
+  /* coverage strip: one cell per paint, line spans darkest→lightest owned */
+  .cov { position:relative; height:16px; margin-top:6px; width:392px; }
+  .cov .cell { position:absolute; top:5px; width:58px; height:6px; border-radius:3px; background:#2e2f34; }
+  .cov .cell.on { background:var(--own); }
+  .cov .span { position:absolute; top:7px; height:2px; background:rgba(242,210,122,.45); }
+  .fam-status { font-size:12px; color:var(--mute); margin-top:2px; min-height:16px; }
+  .fam-status.ok { color:var(--own); }
+  .pill { display:inline-block; font-size:10.5px; font-weight:700; color:#222; background:var(--own); border-radius:8px; padding:0 6px; margin-left:6px; vertical-align:1px; }
+  .good { color:#8fd18f; } .bad { color:#e59a9a; }
+  .legend-note { color:var(--mute); font-size:12px; margin:6px 0 0; }
+  .specials { display:flex; flex-wrap:wrap; gap:4px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+  aside { position:sticky; top:72px; align-self:start; max-height:calc(100vh - 92px); overflow:auto; }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:12px; }
+  .panel h3 { margin:0 0 6px; font-size:14px; }
+  .panel p { margin:4px 0; color:var(--mute); font-size:12.5px; }
+  .sug { display:flex; gap:10px; align-items:center; padding:7px 0; border-top:1px solid var(--line); cursor:pointer; }
+  .sug:first-of-type { border-top:0; }
+  .sug:hover .sname { text-decoration:underline; }
+  .chip { width:26px; height:30px; flex:0 0 auto; clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+  .sname { font-weight:600; font-size:13px; }
+  .sdesc { color:var(--mute); font-size:12px; }
+  .score { margin-left:auto; color:var(--own); font-weight:700; font-size:12px; white-space:nowrap; }
+  .famlist div { display:flex; justify-content:space-between; font-size:12.5px; padding:2px 0; }
+  .bar { height:4px; background:#2e2f34; border-radius:2px; margin:1px 0 4px; }
+  .bar i { display:block; height:100%; background:var(--own); border-radius:2px; }
+  .setrow { display:flex; align-items:center; gap:8px; padding:6px 0; border-top:1px solid var(--line); }
+  .setrow:first-of-type { border-top:0; }
+  .setrow .sname { flex:1; }
+  .setrow .sdesc { font-weight:400; }
+  .setrow .mini { height:3px; background:#2e2f34; border-radius:2px; margin-top:3px; }
+  .setrow .mini i { display:block; height:100%; background:var(--own); border-radius:2px; }
+  .sbtn { background:#2b2c31; border:1px solid var(--line); color:var(--ink); border-radius:5px; padding:3px 8px; cursor:pointer; font:inherit; font-size:12px; white-space:nowrap; }
+  .sbtn:hover { background:#3a3b41; }
+  .sbtn.done { color:var(--own); border-color:transparent; background:none; }
+  .sbtn.done:hover { color:#ff8a8a; }
+  .fam-h .famadd { margin-left:8px; font-size:11px; padding:1px 7px; }
+  .toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:#333; color:#fff; padding:8px 14px; border-radius:6px; opacity:0; transition:opacity .2s; pointer-events:none; }
+  .toast.on { opacity:1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Warpaints Fanatic</h1>
+  <span class="stat"><b id="cnt">0</b> / <span id="tot"></span> owned · <b id="tcnt">0</b>/27 families with a triad</span>
+  <span class="seg" id="mode">
+    <button data-m="owned" class="on" title="Owned paints pop, missing ones fade">Spotlight owned</button>
+    <button data-m="missing" title="Missing paints pop, owned ones fade">Spotlight missing</button>
+  </span>
+  <span class="seg" id="filter">
+    <button data-f="all" class="on">All</button>
+    <button data-f="own">Owned</button>
+    <button data-f="miss">Missing</button>
+  </span>
+  <input type="search" id="q" placeholder="Search…">
+  <span class="spacer"></span>
+  <button class="btn" id="share" title="Copy a link that contains your collection">Share link</button>
+  <button class="btn" id="list" title="Copy shopping list (missing paints) as text">Shopping list</button>
+  <button class="btn" id="reset">Clear</button>
+</header>
+
+<main>
+  <section>
+    <h2>Flexible Triad families <span style="text-transform:none;letter-spacing:0">(dark → light; pick any three from one family as shade / base / highlight)</span></h2>
+    <div class="families" id="fams"></div>
+    <p class="legend-note">Per Army Painter, any three paints from the same family make a triad. Neighbouring paints give subtle transitions, spread-out ones (e.g. 1-3-5) give more contrast, and owning more of the six smooths the blends. The strip under each family shows which steps you own and the dark→light range they cover.</p>
+    <div id="specials"></div>
+  </section>
+  <aside>
+    <div class="panel">
+      <h3>Boxed sets</h3>
+      <p>Mark a whole set as owned. For sets you don't own: new paints, triads it would complete, and price compared with buying those new paints singly (€3.69, metallics/washes/effects €3.99). EU webshop prices as of 21 Nov 2026. Hover to see the paints on the chart.</p>
+      <div id="sets"></div>
+    </div>
+    <div class="panel">
+      <h3>Suggested next buys</h3>
+      <p>First paints that complete a triad, then ones that bridge a big jump inside a family you already use, then ones that widen a narrow range or start a triad. Click to mark as owned.</p>
+      <div id="sugs"></div>
+    </div>
+    <div class="panel">
+      <h3>Families</h3>
+      <div class="famlist" id="famlist"></div>
+    </div>
+  </aside>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const DATA = __DATA__;
+const KEY = 'warpaints-fanatic-owned-v1';
+const ORDER = DATA.order;
+const HEX = {};
+DATA.families.forEach(([, ps]) => ps.forEach(([n, h]) => HEX[n] = h));
+DATA.specials.forEach(([, , ps]) => ps.forEach(([n, h]) => HEX[n] = h));
+
+let owned = new Set();
+function load() {
+  const m = location.hash.match(/^#o=([A-Za-z0-9_-]+)/);
+  if (m) {
+    owned = decode(m[1]);
+    history.replaceState(null, '', location.pathname);
+    save(); toast('Collection loaded from link');
+    return;
+  }
+  try { owned = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch { owned = new Set(); }
+}
+function save() { localStorage.setItem(KEY, JSON.stringify([...owned])); }
+function encode() {
+  const bytes = new Uint8Array(Math.ceil(ORDER.length / 8));
+  ORDER.forEach((n, i) => { if (owned.has(n)) bytes[i >> 3] |= 1 << (i & 7); });
+  return btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+function decode(s) {
+  const bin = atob(s.replace(/-/g, '+').replace(/_/g, '/'));
+  const out = new Set();
+  ORDER.forEach((n, i) => { if ((bin.charCodeAt(i >> 3) || 0) & (1 << (i & 7))) out.add(n); });
+  return out;
+}
+
+function textColor(h) {
+  const r = parseInt(h.slice(1, 3), 16), g = parseInt(h.slice(3, 5), 16), b = parseInt(h.slice(5, 7), 16);
+  return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? '#1b1b1b' : '#fafafa';
+}
+const swEls = {};  // name -> element
+function swatch(n, h, cls = '') {
+  const d = document.createElement('div');
+  d.className = 'sw ' + cls;
+  d.style.setProperty('--c', h);
+  d.style.setProperty('--t', textColor(h));
+  d.dataset.n = n;
+  d.title = n;
+  d.innerHTML = `<div class="rim"></div><div class="fill"><span>${n}</span></div><div class="tick">✓</div>`;
+  d.onclick = () => toggle(n);
+  swEls[n] = d;
+  return d;
+}
+function toggle(n) {
+  owned.has(n) ? owned.delete(n) : owned.add(n);
+  save(); refresh();
+}
+
+const famBuild = [];
+function build() {
+  const root = document.getElementById('fams');
+  DATA.families.forEach(([fname, ps]) => {
+    const card = document.createElement('div');
+    card.className = 'fam';
+    const boxes = DATA.famBox[fname] || [];
+    const boxTxt = boxes.length
+      ? 'Sold as ' + boxes.map(x => `${x.name} (€${x.eur.toFixed(2)}${x.was ? ', was €' + x.was.toFixed(2) : ''})`).join(' or ') + '. Six singles cost €22.14.'
+      : 'Mark all six as owned';
+    card.innerHTML = `<div class="fam-h"><b>${fname}</b><span><em></em><button class="sbtn famadd">+ all 6</button></span></div>`;
+    const addBtn = card.querySelector('.famadd'); addBtn.title = boxTxt;
+    addBtn.onclick = () => { ps.forEach(([n]) => owned.add(n)); save(); refresh(); };
+    const row = document.createElement('div'); row.className = 'row';
+    ps.forEach(([n, h]) => row.appendChild(swatch(n, h)));
+    card.appendChild(row);
+    const cov = document.createElement('div'); cov.className = 'cov';
+    cov.innerHTML = '<div class="span"></div>' + ps.map((_, i) => `<div class="cell" style="left:${i * 66 + 2}px"></div>`).join('');
+    card.appendChild(cov);
+    const status = document.createElement('div'); status.className = 'fam-status';
+    card.appendChild(status);
+    root.appendChild(card);
+    famBuild.push({ fname, names: ps.map(p => p[0]), head: card.querySelector('.fam-h em'), add: addBtn,
+                    cells: [...cov.querySelectorAll('.cell')], span: cov.querySelector('.span'), status });
+  });
+  const sp = document.getElementById('specials');
+  DATA.specials.forEach(([title, cls, ps]) => {
+    const h = document.createElement('h2'); h.textContent = title; sp.appendChild(h);
+    const box = document.createElement('div'); box.className = 'specials';
+    ps.forEach(([n, hx]) => box.appendChild(swatch(n, hx, cls)));
+    sp.appendChild(box);
+  });
+  document.getElementById('tot').textContent = ORDER.length;
+}
+
+const SINGLE = n => DATA.single[n] ?? (DATA.specials.some(([, c, ps]) => c !== 'aux' && ps.some(p => p[0] === n)) ? 3.99 : 3.69);
+
+// smallest step between any two owned positions (bigger = better spread)
+const minStep = pos => pos.slice(1).reduce((m, p, i) => Math.min(m, p - pos[i]), 9);
+
+function famInfo(names, set = owned) {
+  const pos = names.map((n, i) => set.has(n) ? i : -1).filter(i => i >= 0);
+  return { pos, k: pos.length, span: pos.length ? pos[pos.length - 1] - pos[0] : 0 };
+}
+
+function suggestions() {
+  const out = [];
+  famBuild.forEach(({ fname, names }) => {
+    const { pos, k, span } = famInfo(names);
+    const free = names.map((_, i) => i).filter(i => !pos.includes(i));
+    const nm = i => names[i];
+    if (k === 2) {
+      let best = null;
+      free.forEach(c => {
+        const p = [...pos, c].sort((a, b) => a - b);
+        const sc = minStep(p) * 10 + (p[2] - p[0]);
+        if (!best || sc > best.sc) best = { c, sc, p };
+      });
+      out.push({ n: nm(best.c), fam: fname, tier: 0, sub: best.sc, why: `Completes a triad: ${best.p.map(nm).join(' / ')}`, tag: 'triad' });
+    } else if (k >= 3 && k < 6) {
+      let g = null;
+      pos.slice(1).forEach((p, i) => { const d = p - pos[i]; if (d >= 3 && (!g || d > g.d)) g = { a: pos[i], b: p, d }; });
+      if (g) out.push({ n: nm(Math.round((g.a + g.b) / 2)), fam: fname, tier: 1, sub: g.d, why: `Bridges the ${g.d}-step jump from ${nm(g.a)} to ${nm(g.b)}` });
+      else if (span <= 3) {
+        const lo = pos[0], hi = pos[pos.length - 1];
+        const c = (lo >= 5 - hi) ? (lo - 2 >= 0 ? lo - 2 : lo - 1) : (hi + 2 <= 5 ? hi + 2 : hi + 1);
+        out.push({ n: nm(c), fam: fname, tier: 2, sub: 0, why: `Widens the range ${c < lo ? 'darker' : 'lighter'} for more contrast` });
+      }
+    } else if (k === 1) {
+      const p = pos[0], c = p <= 2 ? p + 2 : p - 2;
+      out.push({ n: nm(c), fam: fname, tier: 3, sub: 0, why: `Two of three for a triad (with ${nm(p)})` });
+    }
+  });
+  return out.sort((a, b) => a.tier - b.tier || b.sub - a.sub).slice(0, 15);
+}
+
+function setValue(s) {
+  const nw = s.p.filter(n => !owned.has(n));
+  const after = new Set([...owned, ...s.p]);
+  const triads = famBuild.filter(f => famInfo(f.names).k < 3 && famInfo(f.names, after).k >= 3).length;
+  const singles = nw.reduce((a, n) => a + SINGLE(n), 0);
+  return { nw: nw.length, triads, singles, diff: singles - s.eur };
+}
+
+function refresh() {
+  const filt = document.querySelector('#filter .on').dataset.f;
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  for (const [n, el] of Object.entries(swEls)) {
+    const o = owned.has(n);
+    el.classList.toggle('own', o);
+    const hide = (filt === 'own' && !o) || (filt === 'miss' && o) || (q && !n.toLowerCase().includes(q));
+    el.classList.toggle('hide', hide);
+  }
+  let full = 0;
+  famBuild.forEach(({ names, cells, span, status }) => {
+    const { pos, k, span: sp } = famInfo(names);
+    cells.forEach((c, i) => c.classList.toggle('on', pos.includes(i)));
+    span.style.display = k >= 2 ? '' : 'none';
+    if (k >= 2) { span.style.left = (pos[0] * 66 + 2) + 'px'; span.style.width = (sp * 66 + 58) + 'px'; }
+    let msg = '', ok = false;
+    if (k >= 3) {
+      ok = true; full++;
+      let gap = 0; pos.slice(1).forEach((p, i) => gap = Math.max(gap, p - pos[i]));
+      msg = k === 6 ? 'Full family: every step for smooth blending'
+          : sp >= 4 ? (gap >= 3 ? `Triad, wide range, but a ${gap}-step jump in the middle` : 'Triad, wide range')
+          : sp === 2 ? 'Triad, subtle (three neighbours)' : 'Triad, medium contrast';
+    } else if (k === 2) msg = 'One paint short of a triad';
+    else if (k === 1) msg = 'Two paints short of a triad';
+    status.textContent = msg; status.classList.toggle('ok', ok);
+  });
+  document.getElementById('cnt').textContent = owned.size;
+  document.getElementById('tcnt').textContent = full;
+
+  const fl = document.getElementById('famlist'); fl.innerHTML = '';
+  famBuild.forEach(({ fname, names, head, add }) => {
+    const k = names.filter(n => owned.has(n)).length;
+    head.textContent = `${k}/6${k >= 3 ? ' ✓' : ''}`;
+    add.style.display = k === 6 ? 'none' : '';
+    fl.insertAdjacentHTML('beforeend', `<div><span>${fname}</span><span>${k}/6</span></div><div class="bar"><i style="width:${k / 6 * 100}%"></i></div>`);
+  });
+
+  const st = document.getElementById('sets'); st.innerHTML = '';
+  const vals = DATA.sets.map(setValue);
+  
+  DATA.sets.forEach((s, i) => {
+    const v = vals[i], miss = v.nw, have = s.p.length - miss;
+    const r = document.createElement('div'); r.className = 'setrow';
+    const money = miss ? ` · €${s.eur.toFixed(2)}, ${Math.abs(v.diff) < 1 ? `same as ${miss} singles` : v.diff > 0 ? `<span class="good">€${v.diff.toFixed(0)} cheaper</span> than ${miss} singles` : `<span class="bad">€${(-v.diff).toFixed(0)} dearer</span> than ${miss} singles`}` : '';
+    r.innerHTML = `<div class="sname">${s.t}<div class="sdesc">${have}/${s.p.length} owned${miss ? ` · <b style="color:var(--ink)">+${miss} new</b>` : ''}${v.triads ? ` · <b style="color:var(--own)">+${v.triads} triad${v.triads > 1 ? 's' : ''}</b>` : ''}${money}${s.note ? ' · ' + s.note : ''}</div>
+      <div class="mini"><i style="width:${have / s.p.length * 100}%"></i></div></div>
+      <button class="sbtn ${miss ? '' : 'done'}" title="${miss ? 'Mark all ' + s.p.length + ' paints as owned' : 'Click to unmark these paints'}">${miss ? 'I own this' : '✓ owned'}</button>`;
+    r.querySelector('button').onclick = () => {
+      if (miss) s.p.forEach(n => owned.add(n));
+      else if (confirm(`Unmark all ${s.p.length} paints from ${s.t}? (Also removes ones you got elsewhere.)`)) s.p.forEach(n => owned.delete(n));
+      else return;
+      save(); refresh();
+    };
+    r.onmouseenter = () => s.p.forEach(n => swEls[n].classList.add('hl'));
+    r.onmouseleave = () => s.p.forEach(n => swEls[n].classList.remove('hl'));
+    st.appendChild(r);
+  });
+
+  const sg = document.getElementById('sugs'); sg.innerHTML = '';
+  const s = suggestions();
+  if (!s.length) sg.innerHTML = '<p>Nothing to suggest yet. Mark paints you own; families you own none of are better served by a box (see Boxed sets).</p>';
+  s.forEach(x => {
+    const d = document.createElement('div'); d.className = 'sug';
+    d.innerHTML = `<div class="chip" style="background:${HEX[x.n]}"></div>
+      <div><div class="sname">${x.n}</div><div class="sdesc">${x.fam}: ${x.why}</div></div>
+      <div class="score">${x.tag ? '+1 triad' : ''}</div>`;
+    d.onclick = () => toggle(x.n);
+    d.onmouseenter = () => { swEls[x.n].classList.add('hl'); };
+    d.onmouseleave = () => { swEls[x.n].classList.remove('hl'); };
+    sg.appendChild(d);
+  });
+}
+
+function toast(t) { const e = document.getElementById('toast'); e.textContent = t; e.classList.add('on'); setTimeout(() => e.classList.remove('on'), 1800); }
+function seg(id, cb) {
+  document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
+    document.querySelectorAll(`#${id} button`).forEach(x => x.classList.toggle('on', x === b)); cb(b); });
+}
+seg('mode', b => { document.body.classList.toggle('mode-missing', b.dataset.m === 'missing'); });
+seg('filter', refresh);
+document.getElementById('q').oninput = refresh;
+document.getElementById('share').onclick = async () => {
+  const url = location.origin + location.pathname + '#o=' + encode();
+  try { await navigator.clipboard.writeText(url); toast('Share link copied'); } catch { prompt('Copy this link:', url); }
+};
+document.getElementById('list').onclick = async () => {
+  const lines = [];
+  DATA.families.forEach(([f, ps]) => { const m = ps.map(p => p[0]).filter(n => !owned.has(n)); if (m.length) lines.push(`${f}: ${m.join(', ')}`); });
+  DATA.specials.forEach(([f, , ps]) => { const m = ps.map(p => p[0]).filter(n => !owned.has(n)); if (m.length) lines.push(`${f}: ${m.join(', ')}`); });
+  const txt = lines.join('\n');
+  try { await navigator.clipboard.writeText(txt); toast('Missing-paint list copied'); } catch { prompt('Copy:', txt); }
+};
+document.getElementById('reset').onclick = () => { if (confirm('Clear your whole collection?')) { owned.clear(); save(); refresh(); } };
+
+load(); build(); refresh();
+</script>
+</body>
+</html>

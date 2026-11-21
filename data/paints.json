@@ -1,0 +1,2049 @@
+{
+ "families": [
+  [
+   "Black & Greys",
+   [
+    [
+     "Matt Black",
+     "#000000"
+    ],
+    [
+     "Deep Grey",
+     "#4d5265"
+    ],
+    [
+     "Uniform Grey",
+     "#6a707c"
+    ],
+    [
+     "Ash Grey",
+     "#868990"
+    ],
+    [
+     "Company Grey",
+     "#bdbec3"
+    ],
+    [
+     "Brigade Grey",
+     "#d1d2d4"
+    ]
+   ]
+  ],
+  [
+   "Warm Greys & White",
+   [
+    [
+     "Grey Castle",
+     "#919187"
+    ],
+    [
+     "Gargoyle Grey",
+     "#a9a395"
+    ],
+    [
+     "Great Hall Grey",
+     "#bdb5a8"
+    ],
+    [
+     "Worn Stone",
+     "#c3c0b1"
+    ],
+    [
+     "Brainmatter Beige",
+     "#dfdcd3"
+    ],
+    [
+     "Matt White",
+     "#ffffff"
+    ]
+   ]
+  ],
+  [
+   "Desaturated Blue-Greys",
+   [
+    [
+     "Night Sky",
+     "#33455d"
+    ],
+    [
+     "Thunderous Blue",
+     "#36577a"
+    ],
+    [
+     "Stratos Blue",
+     "#366591"
+    ],
+    [
+     "Wolf Grey",
+     "#517ba5"
+    ],
+    [
+     "Runic Cobalt",
+     "#7698b4"
+    ],
+    [
+     "Frost Blue",
+     "#9bbfdf"
+    ]
+   ]
+  ],
+  [
+   "Strong Pale Blues",
+   [
+    [
+     "Triumphant Navy",
+     "#1a2d57"
+    ],
+    [
+     "Gothic Blue",
+     "#2f4078"
+    ],
+    [
+     "Ultramarine Blue",
+     "#274e8f"
+    ],
+    [
+     "Alpha Blue",
+     "#667fbf"
+    ],
+    [
+     "Baron Blue",
+     "#7c97ce"
+    ],
+    [
+     "Augur Blue",
+     "#acbee2"
+    ]
+   ]
+  ],
+  [
+   "Vivid Blues",
+   [
+    [
+     "Imperial Navy",
+     "#073662"
+    ],
+    [
+     "Regal Blue",
+     "#005189"
+    ],
+    [
+     "Royal Blue",
+     "#0061b0"
+    ],
+    [
+     "Crystal Blue",
+     "#0075bb"
+    ],
+    [
+     "Arctic Gem",
+     "#1696d5"
+    ],
+    [
+     "Bright Sapphire",
+     "#86cff2"
+    ]
+   ]
+  ],
+  [
+   "Deep Green-Blues",
+   [
+    [
+     "Deep Ocean Blue",
+     "#1c3345"
+    ],
+    [
+     "Abyssal Blue",
+     "#00506b"
+    ],
+    [
+     "Tidal Blue",
+     "#006b95"
+    ],
+    [
+     "Phalanx Blue",
+     "#068ab0"
+    ],
+    [
+     "Shieldwall Blue",
+     "#06a4cb"
+    ],
+    [
+     "Aegis Aqua",
+     "#2fb4d5"
+    ]
+   ]
+  ],
+  [
+   "Turquoises",
+   [
+    [
+     "Deep Azure",
+     "#006c79"
+    ],
+    [
+     "Hydra Turquoise",
+     "#179498"
+    ],
+    [
+     "Turquoise Siren",
+     "#2ab5bc"
+    ],
+    [
+     "Aquamarine",
+     "#54c5cb"
+    ],
+    [
+     "Neptune Glow",
+     "#78cdd4"
+    ],
+    [
+     "Marine Mist",
+     "#95d5d5"
+    ]
+   ]
+  ],
+  [
+   "Teals",
+   [
+    [
+     "Scarab Green",
+     "#1a3c45"
+    ],
+    [
+     "Temple Gate Teal",
+     "#066056"
+    ],
+    [
+     "Pharaoh Guard",
+     "#0c7962"
+    ],
+    [
+     "Talisman Teal",
+     "#0fb091"
+    ],
+    [
+     "Aqua Alchemy",
+     "#27bba3"
+    ],
+    [
+     "Amulet Aqua",
+     "#68c6b4"
+    ]
+   ]
+  ],
+  [
+   "Vibrant Greens",
+   [
+    [
+     "Emerald Forest",
+     "#5dbb4d"
+    ],
+    [
+     "Leafy Green",
+     "#76c043"
+    ],
+    [
+     "Rainforest",
+     "#8ec63f"
+    ],
+    [
+     "Electric Lime",
+     "#bcd52f"
+    ],
+    [
+     "Vivid Volt",
+     "#d1e053"
+    ],
+    [
+     "Afterglow",
+     "#e5ea8e"
+    ]
+   ]
+  ],
+  [
+   "Desaturated Cool Greens",
+   [
+    [
+     "Evergreen Fog",
+     "#3b645e"
+    ],
+    [
+     "Medieval Forest",
+     "#467c6f"
+    ],
+    [
+     "Patagon Pine",
+     "#629380"
+    ],
+    [
+     "Autumn Sage",
+     "#76ad9a"
+    ],
+    [
+     "Forest Faun",
+     "#a1c9ae"
+    ],
+    [
+     "Mossy Green",
+     "#b1dcc0"
+    ]
+   ]
+  ],
+  [
+   "Olive Greens",
+   [
+    [
+     "Woodland Camo",
+     "#3c4a39"
+    ],
+    [
+     "Army Green",
+     "#4b5c3c"
+    ],
+    [
+     "Camouflage Green",
+     "#5e6f4d"
+    ],
+    [
+     "Olive Drab",
+     "#6e835a"
+    ],
+    [
+     "Necrotic Flesh",
+     "#9ba985"
+    ],
+    [
+     "Grotesque Green",
+     "#b1c39d"
+    ]
+   ]
+  ],
+  [
+   "Deep Greens",
+   [
+    [
+     "Angel Green",
+     "#1a3e32"
+    ],
+    [
+     "Guardian Green",
+     "#23614a"
+    ],
+    [
+     "Greenskin",
+     "#1c713a"
+    ],
+    [
+     "Eternal Hunt",
+     "#2a9b4d"
+    ],
+    [
+     "Wild Green",
+     "#45b958"
+    ],
+    [
+     "Ferocious Green",
+     "#75c378"
+    ]
+   ]
+  ],
+  [
+   "Ochres & Tans",
+   [
+    [
+     "Tundra Taupe",
+     "#4d503f"
+    ],
+    [
+     "Prairie Ochre",
+     "#686343"
+    ],
+    [
+     "Desert Yellow",
+     "#826f45"
+    ],
+    [
+     "Wasteland Clay",
+     "#a48856"
+    ],
+    [
+     "Burnt Turf",
+     "#bf995a"
+    ],
+    [
+     "Barren Dune",
+     "#dbba73"
+    ]
+   ]
+  ],
+  [
+   "Light Neutrals",
+   [
+    [
+     "Dusty Skull",
+     "#8c7d6a"
+    ],
+    [
+     "Tomb King Tan",
+     "#a39278"
+    ],
+    [
+     "Skeleton Bone",
+     "#c0b393"
+    ],
+    [
+     "Ancient Stone",
+     "#cfc4a4"
+    ],
+    [
+     "Bony Spikes",
+     "#e7d5bf"
+    ],
+    [
+     "Pale Sand",
+     "#efe8d5"
+    ]
+   ]
+  ],
+  [
+   "Yellows",
+   [
+    [
+     "Demigod Flames",
+     "#d27c43"
+    ],
+    [
+     "Fiendish Yellow",
+     "#e39d2e"
+    ],
+    [
+     "Daemonic Yellow",
+     "#fecd2a"
+    ],
+    [
+     "Warped Yellow",
+     "#ffd64a"
+    ],
+    [
+     "Space Dust",
+     "#fee487"
+    ],
+    [
+     "Ice Yellow",
+     "#ffeeae"
+    ]
+   ]
+  ],
+  [
+   "Oranges",
+   [
+    [
+     "Molten Lava",
+     "#f05237"
+    ],
+    [
+     "Burning Ore",
+     "#f2652f"
+    ],
+    [
+     "Lava Orange",
+     "#f67f21"
+    ],
+    [
+     "Flickering Flame",
+     "#f68c3e"
+    ],
+    [
+     "Glowing Inferno",
+     "#f99c3f"
+    ],
+    [
+     "Inner Light",
+     "#fecb60"
+    ]
+   ]
+  ],
+  [
+   "Warm Reds",
+   [
+    [
+     "Resplendent Red",
+     "#97282f"
+    ],
+    [
+     "Angelic Red",
+     "#d42c39"
+    ],
+    [
+     "Legendary Red",
+     "#ef4b41"
+    ],
+    [
+     "Sacred Scarlet",
+     "#f1634b"
+    ],
+    [
+     "Violent Vermillion",
+     "#f47a63"
+    ],
+    [
+     "Raging Rouge",
+     "#f58f81"
+    ]
+   ]
+  ],
+  [
+   "Browns",
+   [
+    [
+     "Brigandine Brown",
+     "#2c2022"
+    ],
+    [
+     "Bootstrap Brown",
+     "#482f32"
+    ],
+    [
+     "Leather Brown",
+     "#634137"
+    ],
+    [
+     "Paratrooper Tan",
+     "#99796e"
+    ],
+    [
+     "Command Khaki",
+     "#b5958a"
+    ],
+    [
+     "Urban Buff",
+     "#ddb9ab"
+    ]
+   ]
+  ],
+  [
+   "Cool Reds",
+   [
+    [
+     "Basilisk Red",
+     "#6f273b"
+    ],
+    [
+     "Wyvern Fury",
+     "#9a3346"
+    ],
+    [
+     "Dragon Red",
+     "#c02c3c"
+    ],
+    [
+     "Pure Red",
+     "#cb161d"
+    ],
+    [
+     "Blood Chalice",
+     "#db4c4e"
+    ],
+    [
+     "Raging Rose",
+     "#ea6661"
+    ]
+   ]
+  ],
+  [
+   "Ruddy Browns",
+   [
+    [
+     "Oak Brown",
+     "#3c272c"
+    ],
+    [
+     "Tree Ancient",
+     "#4f3632"
+    ],
+    [
+     "Dryad Brown",
+     "#603731"
+    ],
+    [
+     "Fur Brown",
+     "#794645"
+    ],
+    [
+     "Ruddy Umber",
+     "#975b51"
+    ],
+    [
+     "Buffed Hide",
+     "#b3786a"
+    ]
+   ]
+  ],
+  [
+   "Purples",
+   [
+    [
+     "Terrestrial Titan",
+     "#34324a"
+    ],
+    [
+     "Alien Purple",
+     "#6154a4"
+    ],
+    [
+     "Cultist Purple",
+     "#6d63ac"
+    ],
+    [
+     "Hexed Violet",
+     "#8d82be"
+    ],
+    [
+     "Violet Coven",
+     "#ab99cb"
+    ],
+    [
+     "Kraken Lavender",
+     "#d7cae4"
+    ]
+   ]
+  ],
+  [
+   "Pinks",
+   [
+    [
+     "Wicked Pink",
+     "#d00988"
+    ],
+    [
+     "Impish Rouge",
+     "#da56a1"
+    ],
+    [
+     "Pixie Pink",
+     "#d970ab"
+    ],
+    [
+     "Weird Elixir",
+     "#e293c0"
+    ],
+    [
+     "Pink Potion",
+     "#f8b9d4"
+    ],
+    [
+     "Doomfire Drab",
+     "#fbd9e7"
+    ]
+   ]
+  ],
+  [
+   "Desaturated Violets",
+   [
+    [
+     "Mulled Berry",
+     "#61364a"
+    ],
+    [
+     "Moldy Wine",
+     "#7c3652"
+    ],
+    [
+     "Elder Flower",
+     "#a9597c"
+    ],
+    [
+     "Forbidden Fruit",
+     "#cf8aa7"
+    ],
+    [
+     "Figgy Pink",
+     "#e5afc7"
+    ],
+    [
+     "Wilted Rose",
+     "#ecc5d8"
+    ]
+   ]
+  ],
+  [
+   "Magentas",
+   [
+    [
+     "Diabolic Plum",
+     "#582f73"
+    ],
+    [
+     "Magecast Magenta",
+     "#713e9a"
+    ],
+    [
+     "Warlock Magenta",
+     "#854c9d"
+    ],
+    [
+     "Spellbound Fuchsia",
+     "#ae509e"
+    ],
+    [
+     "Enchanted Pink",
+     "#b56dac"
+    ],
+    [
+     "Diviner Light",
+     "#d59ec8"
+    ]
+   ]
+  ],
+  [
+   "Rose Skin Tones",
+   [
+    [
+     "Moonstone Skin",
+     "#c57a74"
+    ],
+    [
+     "Agate Skin",
+     "#d7877c"
+    ],
+    [
+     "Barbarian Flesh",
+     "#f89a81"
+    ],
+    [
+     "Ruby Skin",
+     "#fab89e"
+    ],
+    [
+     "Opal Skin",
+     "#fdd3c5"
+    ],
+    [
+     "Pearl Skin",
+     "#fee3d8"
+    ]
+   ]
+  ],
+  [
+   "Deep Skin Tones",
+   [
+    [
+     "Obsidian Skin",
+     "#4a3f47"
+    ],
+    [
+     "Onyx Skin",
+     "#6d504a"
+    ],
+    [
+     "Mocca Skin",
+     "#83675c"
+    ],
+    [
+     "Amber Skin",
+     "#c3a084"
+    ],
+    [
+     "Dorado Skin",
+     "#efc89f"
+    ],
+    [
+     "Quartz Skin",
+     "#f2d0b4"
+    ]
+   ]
+  ],
+  [
+   "Warm Skin Tones",
+   [
+    [
+     "Carnelian Skin",
+     "#5e3f45"
+    ],
+    [
+     "Tiger's Eye Skin",
+     "#904e52"
+    ],
+    [
+     "Topaz Skin",
+     "#b45b55"
+    ],
+    [
+     "Jasper Skin",
+     "#bb7573"
+    ],
+    [
+     "Tourmaline Skin",
+     "#e49c8e"
+    ],
+    [
+     "Leopard Stone Skin",
+     "#e9b6b2"
+    ]
+   ]
+  ]
+ ],
+ "specials": [
+  [
+   "Effects",
+   "effect",
+   [
+    [
+     "Disgusting Slime",
+     "#aecf3f"
+    ],
+    [
+     "Dry Blood",
+     "#26000c"
+    ],
+    [
+     "True Blood",
+     "#930a27"
+    ],
+    [
+     "Dark Rust",
+     "#260f10"
+    ],
+    [
+     "Fresh Rust",
+     "#c2562d"
+    ],
+    [
+     "Verdigris",
+     "#65c0a2"
+    ],
+    [
+     "Oil Stains",
+     "#151d1f"
+    ],
+    [
+     "Oozing Vomit",
+     "#9a7c28"
+    ]
+   ]
+  ],
+  [
+   "Fluorescents",
+   "fluo",
+   [
+    [
+     "Plasma Coil Glow",
+     "#34c6f4"
+    ],
+    [
+     "Data System Glow",
+     "#8bc869"
+    ],
+    [
+     "Lens Flare Glow",
+     "#fff455"
+    ],
+    [
+     "Radiation Glow",
+     "#fbb06d"
+    ],
+    [
+     "Power Node Glow",
+     "#ff6fb3"
+    ]
+   ]
+  ],
+  [
+   "Metallics",
+   "metal",
+   [
+    [
+     "Rough Iron",
+     "#302820"
+    ],
+    [
+     "Red Copper",
+     "#683e40"
+    ],
+    [
+     "Weapon Bronze",
+     "#a36014"
+    ],
+    [
+     "True Copper",
+     "#895a40"
+    ],
+    [
+     "Evil Chrome",
+     "#79503e"
+    ],
+    [
+     "True Brass",
+     "#827b70"
+    ],
+    [
+     "Tainted Gold",
+     "#5e5a3e"
+    ],
+    [
+     "Greedy Gold",
+     "#a47325"
+    ],
+    [
+     "Bright Gold",
+     "#a88821"
+    ],
+    [
+     "Mithril",
+     "#aaaaae"
+    ],
+    [
+     "Shining Silver",
+     "#8b8c90"
+    ],
+    [
+     "Plate Mail Metal",
+     "#68696e"
+    ],
+    [
+     "Gun Metal",
+     "#525357"
+    ],
+    [
+     "Cobalt Metal",
+     "#31464a"
+    ],
+    [
+     "Death Metal",
+     "#2b2b2c"
+    ]
+   ]
+  ],
+  [
+   "Gemstones",
+   "gem",
+   [
+    [
+     "Dark Emerald",
+     "#3a4c27"
+    ],
+    [
+     "Glittering Green",
+     "#2c7547"
+    ],
+    [
+     "Gemstone Red",
+     "#811e25"
+    ]
+   ]
+  ],
+  [
+   "Washes",
+   "wash",
+   [
+    [
+     "Dark Tone",
+     "#262626"
+    ],
+    [
+     "Strong Tone",
+     "#392819"
+    ],
+    [
+     "Soft Tone",
+     "#614327"
+    ],
+    [
+     "Light Tone",
+     "#985f12"
+    ],
+    [
+     "Sepia Tone",
+     "#8d4a12"
+    ],
+    [
+     "Rust Tone",
+     "#563413"
+    ],
+    [
+     "Dark Red Tone",
+     "#3f1b21"
+    ],
+    [
+     "Red Tone",
+     "#6a222f"
+    ],
+    [
+     "Orange Tone",
+     "#893a12"
+    ],
+    [
+     "Green Tone",
+     "#25442c"
+    ],
+    [
+     "Military Shade",
+     "#383e19"
+    ],
+    [
+     "Blue Tone",
+     "#1b3e64"
+    ],
+    [
+     "Dark Blue Tone",
+     "#1e2b3d"
+    ],
+    [
+     "Purple Tone",
+     "#3f2b50"
+    ],
+    [
+     "Magenta Tone",
+     "#8a004d"
+    ],
+    [
+     "Strong Skin Shade",
+     "#402421"
+    ],
+    [
+     "Dark Skin Shade",
+     "#403334"
+    ]
+   ]
+  ],
+  [
+   "Auxiliaries",
+   "aux",
+   [
+    [
+     "Warpaints Stabilizer",
+     "#e9e6df"
+    ],
+    [
+     "Warpaints Retarder",
+     "#e9e6df"
+    ],
+    [
+     "Gloss Varnish",
+     "#e9e6df"
+    ],
+    [
+     "Matt Varnish",
+     "#e9e6df"
+    ],
+    [
+     "Brush-On Primer",
+     "#878f92"
+    ],
+    [
+     "Wash Medium",
+     "#c8c8c8"
+    ]
+   ]
+  ]
+ ],
+ "order": [
+  "Matt Black",
+  "Deep Grey",
+  "Uniform Grey",
+  "Ash Grey",
+  "Company Grey",
+  "Brigade Grey",
+  "Grey Castle",
+  "Gargoyle Grey",
+  "Great Hall Grey",
+  "Worn Stone",
+  "Brainmatter Beige",
+  "Matt White",
+  "Night Sky",
+  "Thunderous Blue",
+  "Stratos Blue",
+  "Wolf Grey",
+  "Runic Cobalt",
+  "Frost Blue",
+  "Triumphant Navy",
+  "Gothic Blue",
+  "Ultramarine Blue",
+  "Alpha Blue",
+  "Baron Blue",
+  "Augur Blue",
+  "Imperial Navy",
+  "Regal Blue",
+  "Royal Blue",
+  "Crystal Blue",
+  "Arctic Gem",
+  "Bright Sapphire",
+  "Deep Ocean Blue",
+  "Abyssal Blue",
+  "Tidal Blue",
+  "Phalanx Blue",
+  "Shieldwall Blue",
+  "Aegis Aqua",
+  "Deep Azure",
+  "Hydra Turquoise",
+  "Turquoise Siren",
+  "Aquamarine",
+  "Neptune Glow",
+  "Marine Mist",
+  "Scarab Green",
+  "Temple Gate Teal",
+  "Pharaoh Guard",
+  "Talisman Teal",
+  "Aqua Alchemy",
+  "Amulet Aqua",
+  "Angel Green",
+  "Guardian Green",
+  "Greenskin",
+  "Eternal Hunt",
+  "Wild Green",
+  "Ferocious Green",
+  "Emerald Forest",
+  "Leafy Green",
+  "Rainforest",
+  "Electric Lime",
+  "Vivid Volt",
+  "Afterglow",
+  "Evergreen Fog",
+  "Medieval Forest",
+  "Patagon Pine",
+  "Autumn Sage",
+  "Forest Faun",
+  "Mossy Green",
+  "Woodland Camo",
+  "Army Green",
+  "Camouflage Green",
+  "Olive Drab",
+  "Necrotic Flesh",
+  "Grotesque Green",
+  "Brigandine Brown",
+  "Bootstrap Brown",
+  "Leather Brown",
+  "Paratrooper Tan",
+  "Command Khaki",
+  "Urban Buff",
+  "Tundra Taupe",
+  "Prairie Ochre",
+  "Desert Yellow",
+  "Wasteland Clay",
+  "Burnt Turf",
+  "Barren Dune",
+  "Dusty Skull",
+  "Tomb King Tan",
+  "Skeleton Bone",
+  "Ancient Stone",
+  "Bony Spikes",
+  "Pale Sand",
+  "Demigod Flames",
+  "Fiendish Yellow",
+  "Daemonic Yellow",
+  "Warped Yellow",
+  "Space Dust",
+  "Ice Yellow",
+  "Molten Lava",
+  "Burning Ore",
+  "Lava Orange",
+  "Flickering Flame",
+  "Glowing Inferno",
+  "Inner Light",
+  "Resplendent Red",
+  "Angelic Red",
+  "Legendary Red",
+  "Sacred Scarlet",
+  "Violent Vermillion",
+  "Raging Rouge",
+  "Oak Brown",
+  "Tree Ancient",
+  "Dryad Brown",
+  "Fur Brown",
+  "Ruddy Umber",
+  "Buffed Hide",
+  "Basilisk Red",
+  "Wyvern Fury",
+  "Dragon Red",
+  "Pure Red",
+  "Blood Chalice",
+  "Raging Rose",
+  "Wicked Pink",
+  "Impish Rouge",
+  "Pixie Pink",
+  "Weird Elixir",
+  "Pink Potion",
+  "Doomfire Drab",
+  "Terrestrial Titan",
+  "Alien Purple",
+  "Cultist Purple",
+  "Hexed Violet",
+  "Violet Coven",
+  "Kraken Lavender",
+  "Diabolic Plum",
+  "Magecast Magenta",
+  "Warlock Magenta",
+  "Spellbound Fuchsia",
+  "Enchanted Pink",
+  "Diviner Light",
+  "Mulled Berry",
+  "Moldy Wine",
+  "Elder Flower",
+  "Forbidden Fruit",
+  "Figgy Pink",
+  "Wilted Rose",
+  "Moonstone Skin",
+  "Agate Skin",
+  "Barbarian Flesh",
+  "Ruby Skin",
+  "Opal Skin",
+  "Pearl Skin",
+  "Carnelian Skin",
+  "Tiger's Eye Skin",
+  "Topaz Skin",
+  "Jasper Skin",
+  "Tourmaline Skin",
+  "Leopard Stone Skin",
+  "Obsidian Skin",
+  "Onyx Skin",
+  "Mocca Skin",
+  "Amber Skin",
+  "Dorado Skin",
+  "Quartz Skin",
+  "Disgusting Slime",
+  "Dry Blood",
+  "True Blood",
+  "Dark Rust",
+  "Fresh Rust",
+  "Verdigris",
+  "Oil Stains",
+  "Oozing Vomit",
+  "Warpaints Stabilizer",
+  "Warpaints Retarder",
+  "Gloss Varnish",
+  "Matt Varnish",
+  "Brush-On Primer",
+  "Plasma Coil Glow",
+  "Data System Glow",
+  "Lens Flare Glow",
+  "Radiation Glow",
+  "Power Node Glow",
+  "Rough Iron",
+  "Red Copper",
+  "Weapon Bronze",
+  "True Copper",
+  "Evil Chrome",
+  "True Brass",
+  "Tainted Gold",
+  "Greedy Gold",
+  "Bright Gold",
+  "Mithril",
+  "Shining Silver",
+  "Plate Mail Metal",
+  "Gun Metal",
+  "Cobalt Metal",
+  "Death Metal",
+  "Dark Emerald",
+  "Glittering Green",
+  "Gemstone Red",
+  "Dark Tone",
+  "Strong Tone",
+  "Soft Tone",
+  "Light Tone",
+  "Sepia Tone",
+  "Rust Tone",
+  "Dark Red Tone",
+  "Red Tone",
+  "Orange Tone",
+  "Green Tone",
+  "Military Shade",
+  "Blue Tone",
+  "Dark Blue Tone",
+  "Purple Tone",
+  "Magenta Tone",
+  "Strong Skin Shade",
+  "Dark Skin Shade",
+  "Wash Medium"
+ ],
+ "sets": [
+  {
+   "t": "Starter Set",
+   "sku": "WP8066",
+   "p": [
+    "Matt Black",
+    "Matt White",
+    "Leather Brown",
+    "Ultramarine Blue",
+    "Greenskin",
+    "Daemonic Yellow",
+    "Pure Red",
+    "Plate Mail Metal",
+    "Greedy Gold",
+    "Brush-On Primer",
+    "Strong Tone"
+   ],
+   "note": "Also inside the Starter / Essentials / Complete Starter Bundles",
+   "eur": 33.99
+  },
+  {
+   "t": "Most Wanted Set",
+   "sku": "WP8071",
+   "p": [
+    "Uniform Grey",
+    "Brainmatter Beige",
+    "Night Sky",
+    "Baron Blue",
+    "Talisman Teal",
+    "Wild Green",
+    "Olive Drab",
+    "Skeleton Bone",
+    "Warped Yellow",
+    "Burning Ore",
+    "Basilisk Red",
+    "Dragon Red",
+    "Cultist Purple",
+    "Warlock Magenta",
+    "Jasper Skin",
+    "Onyx Skin",
+    "Dark Skin Shade",
+    "Brush-On Primer",
+    "Disgusting Slime",
+    "Dry Blood",
+    "True Copper",
+    "Gun Metal"
+   ],
+   "note": "",
+   "eur": 79.99
+  },
+  {
+   "t": "Mega Set",
+   "sku": "WP8067",
+   "p": [
+    "Matt Black",
+    "Deep Grey",
+    "Ash Grey",
+    "Matt White",
+    "Dorado Skin",
+    "Barbarian Flesh",
+    "Topaz Skin",
+    "Onyx Skin",
+    "Thunderous Blue",
+    "Wolf Grey",
+    "Ultramarine Blue",
+    "Imperial Navy",
+    "Crystal Blue",
+    "Bright Sapphire",
+    "Abyssal Blue",
+    "Hydra Turquoise",
+    "Marine Mist",
+    "Pharaoh Guard",
+    "Aqua Alchemy",
+    "Angel Green",
+    "Greenskin",
+    "Rainforest",
+    "Autumn Sage",
+    "Army Green",
+    "Necrotic Flesh",
+    "Desert Yellow",
+    "Daemonic Yellow",
+    "Ice Yellow",
+    "Ancient Stone",
+    "Oak Brown",
+    "Fur Brown",
+    "Pure Red",
+    "Lava Orange",
+    "Wicked Pink",
+    "Pixie Pink",
+    "Alien Purple",
+    "Magecast Magenta",
+    "Mulled Berry",
+    "Basilisk Red",
+    "Wyvern Fury",
+    "Weapon Bronze",
+    "Greedy Gold",
+    "Plate Mail Metal",
+    "True Blood",
+    "Fresh Rust",
+    "Oozing Vomit",
+    "Dark Tone",
+    "Strong Tone",
+    "Soft Tone",
+    "Strong Skin Shade"
+   ],
+   "note": "",
+   "eur": 185.0
+  },
+  {
+   "t": "Wargamers Paint Set",
+   "sku": "WP8073",
+   "p": [
+    "Matt Black",
+    "Uniform Grey",
+    "Grey Castle",
+    "Great Hall Grey",
+    "Brainmatter Beige",
+    "Matt White",
+    "Night Sky",
+    "Stratos Blue",
+    "Runic Cobalt",
+    "Triumphant Navy",
+    "Gothic Blue",
+    "Alpha Blue",
+    "Baron Blue",
+    "Regal Blue",
+    "Royal Blue",
+    "Arctic Gem",
+    "Deep Ocean Blue",
+    "Tidal Blue",
+    "Aegis Aqua",
+    "Deep Azure",
+    "Turquoise Siren",
+    "Aquamarine",
+    "Neptune Glow",
+    "Scarab Green",
+    "Temple Gate Teal",
+    "Aqua Alchemy",
+    "Guardian Green",
+    "Eternal Hunt",
+    "Ferocious Green",
+    "Emerald Forest",
+    "Leafy Green",
+    "Electric Lime",
+    "Afterglow",
+    "Evergreen Fog",
+    "Patagon Pine",
+    "Forest Faun",
+    "Tundra Taupe",
+    "Prairie Ochre",
+    "Woodland Camo",
+    "Camouflage Green",
+    "Olive Drab",
+    "Grotesque Green",
+    "Brigandine Brown",
+    "Bootstrap Brown",
+    "Leather Brown",
+    "Paratrooper Tan",
+    "Command Khaki",
+    "Urban Buff",
+    "Wasteland Clay",
+    "Barren Dune",
+    "Dusty Skull",
+    "Tomb King Tan",
+    "Skeleton Bone",
+    "Pale Sand",
+    "Demigod Flames",
+    "Warped Yellow",
+    "Space Dust",
+    "Burning Ore",
+    "Flickering Flame",
+    "Inner Light",
+    "Resplendent Red",
+    "Legendary Red",
+    "Violent Vermillion",
+    "Tree Ancient",
+    "Dryad Brown",
+    "Ruddy Umber",
+    "Dragon Red",
+    "Blood Chalice",
+    "Impish Rouge",
+    "Weird Elixir",
+    "Doomfire Drab",
+    "Terrestrial Titan",
+    "Cultist Purple",
+    "Violet Coven",
+    "Diabolic Plum",
+    "Warlock Magenta",
+    "Enchanted Pink",
+    "Moldy Wine",
+    "Elder Flower",
+    "Figgy Pink",
+    "Agate Skin",
+    "Ruby Skin",
+    "Obsidian Skin",
+    "Mocca Skin",
+    "Tiger's Eye Skin",
+    "Jasper Skin",
+    "Light Tone",
+    "Sepia Tone",
+    "True Brass",
+    "Bright Gold",
+    "Mithril",
+    "Verdigris",
+    "Disgusting Slime",
+    "Dark Rust",
+    "Military Shade",
+    "Dark Skin Shade",
+    "True Copper",
+    "Gun Metal",
+    "Death Metal",
+    "Data System Glow",
+    "Warpaints Stabilizer",
+    "Warpaints Retarder"
+   ],
+   "note": "",
+   "eur": 375.0
+  },
+  {
+   "t": "Washes Set",
+   "sku": "WP8068",
+   "p": [
+    "Dark Tone",
+    "Strong Tone",
+    "Soft Tone",
+    "Purple Tone",
+    "Dark Red Tone",
+    "Military Shade",
+    "Dark Blue Tone",
+    "Strong Skin Shade",
+    "Sepia Tone",
+    "Light Tone"
+   ],
+   "note": "",
+   "eur": 37.99
+  },
+  {
+   "t": "Metallics Set",
+   "sku": "WP8069",
+   "p": [
+    "Rough Iron",
+    "Red Copper",
+    "True Copper",
+    "Weapon Bronze",
+    "Greedy Gold",
+    "Bright Gold",
+    "Cobalt Metal",
+    "Shining Silver",
+    "Plate Mail Metal",
+    "Gun Metal"
+   ],
+   "note": "",
+   "eur": 37.99
+  },
+  {
+   "t": "Combat Se7ens: Looted War Gear",
+   "sku": "",
+   "p": [
+    "Greenskin",
+    "Leather Brown",
+    "Wild Green",
+    "Resplendent Red",
+    "Daemonic Yellow",
+    "Gun Metal",
+    "Dark Tone"
+   ],
+   "note": "",
+   "eur": 22.99
+  },
+  {
+   "t": "Combat Se7ens: Noble Relic Armour",
+   "sku": "",
+   "p": [
+    "Ultramarine Blue",
+    "Baron Blue",
+    "Ancient Stone",
+    "Angelic Red",
+    "Greedy Gold",
+    "Gun Metal",
+    "Dark Blue Tone"
+   ],
+   "note": "",
+   "eur": 22.99
+  },
+  {
+   "t": "How To Paint Green",
+   "sku": "",
+   "p": [
+    "Angel Green",
+    "Greenskin",
+    "Wild Green",
+    "Dark Tone"
+   ],
+   "note": "",
+   "eur": 14.31
+  },
+  {
+   "t": "Imperial Fist Bundle (Sam Lenz)",
+   "sku": "",
+   "p": [
+    "Matt Black",
+    "Uniform Grey",
+    "Grey Castle",
+    "Matt White",
+    "Night Sky",
+    "Temple Gate Teal",
+    "Talisman Teal",
+    "Brigandine Brown",
+    "Leather Brown",
+    "Command Khaki",
+    "Barren Dune",
+    "Fiendish Yellow",
+    "Daemonic Yellow",
+    "Space Dust",
+    "Ice Yellow",
+    "Angelic Red",
+    "Oak Brown",
+    "Dryad Brown",
+    "Onyx Skin",
+    "True Copper",
+    "Greedy Gold",
+    "Mithril",
+    "Cobalt Metal"
+   ],
+   "note": "Also 6 John Blanche / Historical paints, not tracked here",
+   "eur": 107.5
+  }
+ ],
+ "famBox": {
+  "Deep Greens": [
+   {
+    "name": "Flexible Triad PLUS+: Deep Greens",
+    "eur": 19.49,
+    "was": 25.99,
+    "plus": true
+   },
+   {
+    "name": "Flexible Triad: Deep Greens",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Deep Green-Blues": [
+   {
+    "name": "Flexible Triad PLUS+: Deep Green-Blues",
+    "eur": 19.49,
+    "was": 25.99,
+    "plus": true
+   },
+   {
+    "name": "Flexible Triad: Deep Green-Blues",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Ruddy Browns": [
+   {
+    "name": "Flexible Triad PLUS+: Ruddy Browns",
+    "eur": 25.99,
+    "was": null,
+    "plus": true
+   }
+  ],
+  "Yellows": [
+   {
+    "name": "Flexible Triad PLUS+: Yellows Triad",
+    "eur": 25.99,
+    "was": null,
+    "plus": true
+   },
+   {
+    "name": "Flexible Triad: Yellows",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Ochres & Tans": [
+   {
+    "name": "Flexible Triad PLUS+: Ochres & Tans Triad",
+    "eur": 19.49,
+    "was": 25.99,
+    "plus": true
+   },
+   {
+    "name": "Flexible Triad: Ochres & Tans",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Olive Greens": [
+   {
+    "name": "Flexible Triad PLUS+: Olive Greens Triad",
+    "eur": 19.49,
+    "was": 25.99,
+    "plus": true
+   },
+   {
+    "name": "Flexible Triad: Olive Greens",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Desaturated Violets": [
+   {
+    "name": "Flexible Triad PLUS+: Desaturated Violets Triad",
+    "eur": 19.49,
+    "was": 25.99,
+    "plus": true
+   },
+   {
+    "name": "Flexible Triad: Desaturated Violets",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Desaturated Blue-Greys": [
+   {
+    "name": "Flexible Triad: Desaturated Blue-Greys",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Strong Pale Blues": [
+   {
+    "name": "Flexible Triad: Strong Pale Blues",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Vivid Blues": [
+   {
+    "name": "Flexible Triad: Vivid Blues",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Turquoises": [
+   {
+    "name": "Flexible Triad: Turquoises",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Teals": [
+   {
+    "name": "Flexible Triad: Teals",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Vibrant Greens": [
+   {
+    "name": "Flexible Triad: Vibrant Greens",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Desaturated Cool Greens": [
+   {
+    "name": "Flexible Triad: Desaturated Cool Greens",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Browns": [
+   {
+    "name": "Flexible Triad: Browns",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Light Neutrals": [
+   {
+    "name": "Flexible Triad: Light Neutrals",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Oranges": [
+   {
+    "name": "Flexible Triad: Oranges",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Warm Reds": [
+   {
+    "name": "Flexible Triad: Warm Reds",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Cool Reds": [
+   {
+    "name": "Flexible Triad: Cool Reds",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Pinks": [
+   {
+    "name": "Flexible Triad: Pinks",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Purples": [
+   {
+    "name": "Flexible Triad: Purples",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Magentas": [
+   {
+    "name": "Flexible Triad: Magentas",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Rose Skin Tones": [
+   {
+    "name": "Flexible Triad: Rose Skin Tones",
+    "eur": 17.99,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Warm Skin Tones": [
+   {
+    "name": "Flexible Triad: Warm Skin Tones",
+    "eur": 17.99,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Deep Skin Tones": [
+   {
+    "name": "Flexible Triad: Deep Skin Tones",
+    "eur": 17.99,
+    "was": null,
+    "plus": false
+   }
+  ],
+  "Black & Greys": [
+   {
+    "name": "Flexible Triad: Black & Greys",
+    "eur": 22.14,
+    "was": null,
+    "plus": false
+   }
+  ]
+ },
+ "single": {
+  "Matt White": 3.69,
+  "Matt Black": 3.69,
+  "Plasma Coil Glow": 3.99,
+  "Data System Glow": 3.99,
+  "Gun Metal": 3.99,
+  "Dark Tone": 3.99,
+  "Fresh Rust": 3.99,
+  "Skeleton Bone": 3.69,
+  "True Blood": 3.99,
+  "Lens Flare Glow": 3.99,
+  "Pure Red": 3.69,
+  "Leather Brown": 3.69,
+  "Mithril": 3.99,
+  "Radiation Glow": 3.99,
+  "Power Node Glow": 3.99,
+  "Dragon Red": 3.69,
+  "Greedy Gold": 3.99,
+  "Oak Brown": 3.69,
+  "Dark Rust": 3.99,
+  "True Brass": 3.99,
+  "Verdigris": 3.99,
+  "Brigade Grey": 3.69,
+  "Strong Skin Shade": 3.99,
+  "Strong Tone": 3.99,
+  "Uniform Grey": 3.69,
+  "Deep Grey": 3.69,
+  "Fiendish Yellow": 3.69,
+  "Ash Grey": 3.69,
+  "Dry Blood": 3.99,
+  "Daemonic Yellow": 3.69,
+  "Matt Varnish": 3.99,
+  "Ancient Stone": 3.69,
+  "Gloss Varnish": 3.99,
+  "Oil Stains": 3.99,
+  "Blue Tone": 3.99,
+  "Greenskin": 3.69,
+  "Opal Skin": 3.69,
+  "Cobalt Metal": 3.99,
+  "Ruby Skin": 3.69,
+  "Wolf Grey": 3.69,
+  "Evil Chrome": 3.99,
+  "Lava Orange": 3.69,
+  "Angel Green": 3.69,
+  "Bright Gold": 3.99,
+  "Pearl Skin": 3.69,
+  "Warpaints Stabilizer": 3.99,
+  "Death Metal": 3.99,
+  "Plate Mail Metal": 3.99,
+  "Dark Skin Shade": 3.99,
+  "Wild Green": 3.69,
+  "Disgusting Slime": 3.99,
+  "Runic Cobalt": 3.69,
+  "Basilisk Red": 3.69,
+  "Diabolic Plum": 3.69,
+  "Warped Yellow": 3.69,
+  "Royal Blue": 3.69,
+  "Barbarian Flesh": 3.69,
+  "Turquoise Siren": 3.69,
+  "Pale Sand": 3.69,
+  "Wicked Pink": 3.69,
+  "Legendary Red": 3.69,
+  "Company Grey": 3.69,
+  "Soft Tone": 3.99,
+  "Ice Yellow": 3.69,
+  "Angelic Red": 3.69,
+  "Deep Azure": 3.69,
+  "Dusty Skull": 3.69,
+  "Resplendent Red": 3.69,
+  "Gemstone Red": 3.99,
+  "Bony Spikes": 3.69,
+  "Brainmatter Beige": 3.69,
+  "Green Tone": 3.99,
+  "Brush-On Primer": 3.99,
+  "Frost Blue": 3.69,
+  "Wash Medium": 3.99,
+  "Blood Chalice": 3.69,
+  "Tomb King Tan": 3.69,
+  "Dryad Brown": 3.69,
+  "Oozing Vomit": 3.99,
+  "Bootstrap Brown": 3.69,
+  "Terrestrial Titan": 3.69,
+  "Army Green": 3.69,
+  "Alien Purple": 3.69,
+  "Red Tone": 3.99,
+  "Glowing Inferno": 3.69,
+  "Olive Drab": 3.69,
+  "Purple Tone": 3.99,
+  "Tainted Gold": 3.99,
+  "Arctic Gem": 3.69,
+  "Molten Lava": 3.69,
+  "Brigandine Brown": 3.69,
+  "Imperial Navy": 3.69,
+  "Moonstone Skin": 3.69,
+  "Fur Brown": 3.69,
+  "Rough Iron": 3.99,
+  "Bright Sapphire": 3.69,
+  "Warpaints Retarder": 3.99,
+  "Agate Skin": 3.69,
+  "Wyvern Fury": 3.69,
+  "Demigod Flames": 3.69,
+  "Rust Tone": 3.99,
+  "True Copper": 3.99,
+  "Crystal Blue": 3.69,
+  "Guardian Green": 3.69,
+  "Pixie Pink": 3.69,
+  "Burning Ore": 3.69,
+  "Necrotic Flesh": 3.69,
+  "Regal Blue": 3.69,
+  "Magenta Tone": 3.99,
+  "Pink Potion": 3.69,
+  "Weapon Bronze": 3.99,
+  "Raging Rose": 3.69,
+  "Amber Skin": 3.69,
+  "Warlock Magenta": 3.69,
+  "Eternal Hunt": 3.69,
+  "Talisman Teal": 3.69,
+  "Worn Stone": 3.69,
+  "Grey Castle": 3.69,
+  "Space Dust": 3.69,
+  "Glittering Green": 3.99,
+  "Flickering Flame": 3.69,
+  "Command Khaki": 3.69,
+  "Emerald Forest": 3.69,
+  "Night Sky": 3.69,
+  "Spellbound Fuchsia": 3.69,
+  "Inner Light": 3.69,
+  "Paratrooper Tan": 3.69,
+  "Mocca Skin": 3.69,
+  "Quartz Skin": 3.69,
+  "Desert Yellow": 3.69,
+  "Dark Blue Tone": 3.99,
+  "Dark Emerald": 3.99,
+  "Barren Dune": 3.69,
+  "Ultramarine Blue": 3.69,
+  "Woodland Camo": 3.69,
+  "Dorado Skin": 3.69,
+  "Kraken Lavender": 3.69,
+  "Cultist Purple": 3.69,
+  "Magecast Magenta": 3.69,
+  "Hydra Turquoise": 3.69,
+  "Military Shade": 3.99,
+  "Rainforest": 3.69,
+  "Hexed Violet": 3.69,
+  "Ferocious Green": 3.69,
+  "Camouflage Green": 3.69,
+  "Tree Ancient": 3.69,
+  "Electric Lime": 3.69,
+  "Gargoyle Grey": 3.69,
+  "Sacred Scarlet": 3.69,
+  "Leafy Green": 3.69,
+  "Mulled Berry": 3.69,
+  "Deep Ocean Blue": 3.69,
+  "Obsidian Skin": 3.69,
+  "Elder Flower": 3.69,
+  "Orange Tone": 3.99,
+  "Onyx Skin": 3.69,
+  "Urban Buff": 3.69,
+  "Triumphant Navy": 3.69,
+  "Burnt Turf": 3.69,
+  "Violet Coven": 3.69,
+  "Red Copper": 3.99,
+  "Aquamarine": 3.69,
+  "Buffed Hide": 3.69,
+  "Scarab Green": 3.69,
+  "Aegis Aqua": 3.69,
+  "Light Tone": 3.99,
+  "Great Hall Grey": 3.69,
+  "Augur Blue": 3.69,
+  "Shieldwall Blue": 3.69,
+  "Wasteland Clay": 3.69,
+  "Abyssal Blue": 3.69,
+  "Vivid Volt": 3.69,
+  "Thunderous Blue": 3.69,
+  "Carnelian Skin": 3.69,
+  "Phalanx Blue": 3.69,
+  "Diviner Light": 3.69,
+  "Ruddy Umber": 3.69,
+  "Leopard Stone Skin": 3.69,
+  "Gothic Blue": 3.69,
+  "Moldy Wine": 3.69,
+  "Tundra Taupe": 3.69,
+  "Grotesque Green": 3.69,
+  "Stratos Blue": 3.69,
+  "Forest Faun": 3.69,
+  "Tourmaline Skin": 3.69,
+  "Neptune Glow": 3.69,
+  "Prairie Ochre": 3.69,
+  "Raging Rouge": 3.69,
+  "Marine Mist": 3.69,
+  "Afterglow": 3.69,
+  "Enchanted Pink": 3.69,
+  "Impish Rouge": 3.69,
+  "Amulet Aqua": 3.69,
+  "Tidal Blue": 3.69,
+  "Temple Gate Teal": 3.69,
+  "Alpha Blue": 3.69,
+  "Topaz Skin": 3.69,
+  "Pharaoh Guard": 3.69,
+  "Mossy Green": 3.69,
+  "Sepia Tone": 3.99,
+  "Tiger's Eye Skin": 3.69,
+  "Baron Blue": 3.69,
+  "Doomfire Drab": 3.69,
+  "Dark Red Tone": 3.99,
+  "Jasper Skin": 3.69,
+  "Medieval Forest": 3.69,
+  "Evergreen Fog": 3.69,
+  "Weird Elixir": 3.69,
+  "Aqua Alchemy": 3.69,
+  "Forbidden Fruit": 3.69,
+  "Wilted Rose": 3.69,
+  "Figgy Pink": 3.69,
+  "Patagon Pine": 3.69,
+  "Autumn Sage": 3.69
+ }
+}
